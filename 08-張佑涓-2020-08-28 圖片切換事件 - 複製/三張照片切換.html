@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <img src="01.jpg" alt="">
+    <script>
+        var img_a = "01.jpg"
+        var img_b = "02.jpg"
+        var img_c = "03.jpg"
+
+        var img = document.querySelector("img")
+        var img_src = img.getAttribute("src")
+        // var number = 1
+
+        // img.onclick= function(){
+        // if (number == 1) {
+           
+        //     img.setAttribute('src',img_b)
+        //     number = 2
+        // }  
+        // else if(number == 2) {
+        //     img.setAttribute('src',img_c)
+        //     number = 3
+        // }
+        // else {
+        //     img.setAttribute('src',img_a)
+        //     number = 1
+        // }
+        
+        // }
+        img.onclick= function(){
+            var img_src = img.getAttribute("src")
+        if (img_src== img_a) {
+           
+            img.setAttribute('src',img_b)
+            
+        }  
+        else if(img_src== img_b ){
+            img.setAttribute('src',img_c)
+           
+        }
+        else {
+            img.setAttribute('src',img_a)
+           
+        }
+        
+        }
+        
+    </script>
+</body>
+</html>

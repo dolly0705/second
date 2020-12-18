@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #d7dadf;
+        }
+
+        .blue {
+            background-color: #4267b2;
+        }
+
+        .float-l {
+            float: left;
+        }
+
+        #bluebar {
+            width: 100%;
+            height: 42px;
+        }
+
+        #bluebar-mid {
+            width: 1012px;
+            height: 100%;
+
+            margin: auto;
+        }
+
+        #bluebar-mid1 {
+            width: 620px;
+            height: calc(100% - 18px);
+
+            padding: 9px 0;
+            float: left;
+        }
+
+        #logo {
+            width: 24px;
+            height: 24px;
+            background-color: darkslategray;
+            float: left;
+            margin-right: 7px;
+            background-image: url("fb.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain
+        }
+
+        #search {
+            float: left;
+            height: 18px;
+            width: 350px;
+
+        }
+
+        #bluebar-mid2 {
+            width: 384px;
+            height: 100%;
+
+            float: left;
+        }
+
+        #main {
+            width: 850px;
+            height: 360px;
+            background-color: rgb(37, 73, 37);
+            margin: auto;
+        }
+
+        #cover {
+            width: 100%;
+            height: 315px;
+            background-color: rgb(255, 223, 174);
+            background-image: url("02.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
+        }
+
+        #headline {
+            width: 100%;
+            height: 45px;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+
+
+        }
+
+        #photo {
+            width: 168px;
+            height: 168px;
+            background-color: rgb(37, 73, 37);
+            border-radius: 50%;
+            border: 3px solid white;
+            position: absolute;
+            left: 15px;
+            bottom: 15px;
+            background-image: url("03.jpg");
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #buttom {
+            width: 649px;
+            height: 100%;
+            background-color: #ffffff;
+            float: right;
+        }
+
+        #buttom1 {
+            height: 45px;
+            background-color: #ffffff;
+            float: left;
+            padding: 0 15px;
+            line-height: 45px;
+            font-weight: 900;
+            color: #385898;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+            border-left: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        #buttom2 {
+            height: 45px;
+            float: left;
+            background-color: #ffffff;
+            padding: 0 15px;
+            line-height: 45px;
+            font-weight: 900;
+            color: #385898;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        #buttom3 {
+            height: 45px;
+            float: left;
+            background-color: #ffffff;
+            padding: 0 15px;
+            line-height: 45px;
+            font-weight: 900;
+            color: #385898;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        #buttom4 {
+            height: 45px;
+            float: left;
+            background-color: #ffffff;
+            padding: 0 15px;
+            line-height: 45px;
+            font-weight: 900;
+            color: #385898;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        #buttom5 {
+            height: 45px;
+            float: left;
+            background-color: #ffffff;
+            padding: 0 15px;
+            line-height: 45px;
+            font-weight: 900;
+            color: #385898;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+        }
+
+        #buttom5-1 {
+            height: 45px;
+            width: 20px;
+            float: left;
+            background-color: #ffffff;
+            background-image: url("key.jpg");
+            background-position: center;
+            background-size: 60%;
+            background-repeat: no-repeat;
+
+
+        }
+
+        #buttom5-2 {
+            height: 45px;
+            float: left;
+            background-color: #ffffff;
+            padding: 0 10px;
+            line-height: 45px;
+            font-weight: 900;
+            color: #385898;
+
+        }
+
+        #buttom6 {
+            height: 45px;
+            float: left;
+            background-color: #ffffff;
+            padding: 0 15px;
+            line-height: 45px;
+            font-weight: 900;
+            color: #385898;
+            border-right: 1px solid rgba(128, 128, 128, 0.3);
+
+        }
+
+        #bluebar-mid2-1 {
+            height: 42px;
+            width: 70px;
+            float: left;
+            background-color: #4267b2;
+            padding: 0 20px;
+            line-height: 43px;
+            position: relative;
+
+        
+        }
+
+        #littlephoto {
+            height: 30px;
+            width: 30px;
+            float: left;
+
+            border-radius: 50%;
+            border: 0px solid white;
+            position: absolute;
+            left: 15px;
+            top: calc(50% - 15px);
+            background-image: url("03.jpg");
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+
+        #littlename {
+            float: left;
+            height: 42px;
+            width: 50px;
+            font-weight: 900;
+            font-size: 13px;
+            color: white;
+            position: relative;
+            margin: 0px 0px 0px 40px;
+
+        }
+
+        #bluebar-mid2-2 {
+            height: 42px;
+            float: left;
+            background-color: #4267b2;
+            padding: 0 12px;
+            line-height: 43px;
+            font-weight: 900;
+            font-size: 13px;
+            color: white;
+        }
+
+        #bluebar-mid2-3 {
+            height: 42px;
+            float: left;
+            background-color: #4267b2;
+            padding: 0 12px;
+            line-height: 43px;
+            font-weight: 900;
+            font-size: 13px;
+            color: white;
+        }
+
+        #bluebar-mid2-4 {
+            float: left;
+            width: 20px;
+            height: 27px;
+            padding: 0 7px 1px 10px;
+            padding-top: 10px;
+            background-image: url("好友.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+
+        #bluebar-mid2-5 {
+            float: left;
+            width: 20px;
+            height: 27px;
+            padding: 0 5px 1px;
+            padding-top: 10px;
+            background-image: url("message.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        #bluebar-mid2-6 {
+            float: left;
+            width: 20px;
+            height: 27px;
+            padding: 0 5px 1px;
+            padding-top: 10px;
+            background-image: url("通知.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #bluebar-mid2-7 {
+            float: left;
+            width: 20px;
+            height: 27px;
+            padding: 0 5px 1px;
+            padding-top: 10px;
+            background-image: url("問號.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #bluebar-mid2-8 {
+            float: left;
+            width: 20px;
+            height: 27px;
+            padding: 0 7px 1px;
+            padding-top: 10px;
+            background-image: url("下.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #edit {
+            border: 1px solid rgba(0, 0, 0, .4);
+            background-color: rgb(245, 246, 247);
+            position: absolute;
+            right: 200px;
+            bottom: 20px;
+            text-align: center;
+            border-radius: 2px;
+            float: left;
+            height: 26px;
+            padding: 0 7px;
+        }
+
+        #edit1 {
+            float: left;
+            width: 26px;
+            height: 26px;
+            margin-right: 4px;
+            background-image: url("pen.jpg");
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            margin: auto;
+        }
+
+        #edit2 {
+            float: left;
+
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            text-shadow: none;
+            font-size: 13px;
+            line-height: 30px;
+            font-weight: 900;
+        }
+
+        #recorde{ 
+            float: left;
+            height: 26px;
+            border: 1px solid rgba(0, 0, 0, .4);
+            background-color: rgb(245, 246, 247);
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            text-align: center;
+            border-radius: 2px;
+            padding: 1px;
+        }
+        #recode1{
+            float: left;
+            width: 26px;
+            height: 26px;
+            background-image: url("3點.jpg");
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: left;
+            margin:right ;
+      
+        }
+
+        #recode2{
+            float: left;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            text-shadow: none;
+            font-size: 13px;
+            line-height: 30px;
+            font-weight: 900;
+            margin-left: 10px;
+        }
+        #recode3{
+            float: right;
+            width: 26px;
+            height: 26px;
+            background-image: url("橫三點.jpg");
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: left;
+            margin:auto ;
+            margin-left: 10px;
+            border-left: 1px solid  rgba(128, 128, 128, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bluebar" class="blue">
+        <div id="bluebar-mid" class="blue">
+            <div id="bluebar-mid1" class="blue">
+                <div id="logo"></div>
+                <input id="search" type="text">
+            </div>
+            <div id="bluebar-mid2" class="blue">
+                <div id="bluebar-mid2-1">
+                    <div id="littlephoto"></div>
+                    <div id="littlename">張佑涓</div>
+                </div>
+                <div id="bluebar-mid2-2">首頁</div>
+                <div id="bluebar-mid2-3">建立</div>
+                <div id="bluebar-mid2-4"></div>
+                <div id="bluebar-mid2-5"></div>
+                <div id="bluebar-mid2-6"></div>
+                <div id="bluebar-mid2-7"></div>
+                <div id="bluebar-mid2-8"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="main">
+        <div id="cover">
+            <div id="edit">
+                <div id="edit1"></div>
+                <div id="edit2" class="f">編輯個人檔案</div>
+            </div>
+            <div id="recorde" class="f">
+                <div id="recode1"></div>
+                <div id="recode2">活動紀錄</div>
+                <div id="recode3"></div>
+            </div>
+        </div>
+        <div id="headline">
+            <div id="buttom">
+                <div id="buttom1">動態時報
+
+                </div>
+                <div id="buttom2">關於
+                </div>
+                <div id="buttom3">朋友
+                </div>
+                <div id="buttom4">相片
+                </div>
+                <div id="buttom5">
+                    <div id="buttom5-1"></div>
+                    <div id="buttom5-2">典藏 </div>
+                </div>
+                <div id="buttom6">更多
+                </div>
+
+            </div>
+            <div id="photo">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

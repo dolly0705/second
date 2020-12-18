@@ -1,0 +1,115 @@
+body {
+    background-color: rgb(248, 248, 248);
+  }
+
+  .box {
+    width: 140px;
+    height: 140px;
+    background-color: rgb(124, 122, 122);
+    margin: auto;
+  }
+
+  /* #carouselExampleControls{
+          height: 200px;
+          background-size: cover;
+      } */
+  .carousel-inner {
+    height: 500px;
+
+  }
+
+  .d-block {
+    background-size: cover;
+  }
+
+  .box500 {
+    text-align: center;
+    font-size: 50px;
+    line-height: 300px;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(238, 238, 238);
+    color: rgb(167, 167, 167);
+  }
+
+  #container_row {
+    height: 300px;
+  }
+
+  #float {
+    height: 56px;
+    width: 56px;
+
+  }
+
+  .title_text {
+    color: rgb(97, 97, 97);
+  }
+
+  .text {
+    color: rgb(148, 148, 148);
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0px;
+    z-index: 3;
+  }
+
+  @keyframes hvr-buzz-out {
+
+20% {
+  -webkit-transform: translateX(-3px) rotate(-2deg);
+  transform: translateX(-3px) rotate(-2deg);
+}
+30% {
+  -webkit-transform: translateX(3px) rotate(2deg);
+  transform: translateX(3px) rotate(2deg);
+}
+40% {
+  -webkit-transform: translateX(-3px) rotate(-2deg);
+  transform: translateX(-3px) rotate(-2deg);
+}
+50% {
+  -webkit-transform: translateX(2px) rotate(1deg);
+  transform: translateX(2px) rotate(1deg);
+}
+60% {
+  -webkit-transform: translateX(-2px) rotate(-1deg);
+  transform: translateX(-2px) rotate(-1deg);
+}
+70% {
+  -webkit-transform: translateX(2px) rotate(1deg);
+  transform: translateX(2px) rotate(1deg);
+}
+80% {
+  -webkit-transform: translateX(-2px) rotate(-1deg);
+  transform: translateX(-2px) rotate(-1deg);
+}
+90% {
+  -webkit-transform: translateX(1px) rotate(0);
+  transform: translateX(1px) rotate(0);
+}
+100% {
+  -webkit-transform: translateX(-1px) rotate(0);
+  transform: translateX(-1px) rotate(0);
+}
+}
+.hvr-buzz-out {
+display: inline-block;
+vertical-align: middle;
+-webkit-transform: perspective(1px) translateZ(0);
+transform: perspective(1px) translateZ(0);
+box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-buzz-out:hover, .hvr-buzz-out:focus, .hvr-buzz-out:active {
+-webkit-animation-name: hvr-buzz-out;
+animation-name: hvr-buzz-out;
+-webkit-animation-duration: 0.75s;
+animation-duration: 0.75s;
+-webkit-animation-timing-function: linear;
+animation-timing-function: linear;
+-webkit-animation-iteration-count: 1;
+animation-iteration-count: 1;
+}
+

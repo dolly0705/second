@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+       body{
+           margin: 0px;
+       }
+        .all{
+          display: flex;  
+          flex-wrap: wrap;
+        }
+        .product{
+            
+            width: 33.33%;
+            background-color: rgb(191, 231, 241);
+            padding: 5px;
+           border: 1px solid rgb(131, 183, 196);
+    
+        }
+        .img{
+          
+            background-color: rgb(196, 227, 255);
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="all">
+
+    </div>
+    <script>
+        var array = [
+            {
+            product_name:'烏龍綠茶',
+            price:30,
+            calories:176 + '大卡',
+            ingredients: ['烏龍綠茶茶葉','甘蔗液糖','半月形冰塊'],
+            img:'01.png'
+            },
+
+            {
+            product_name:'特級綠茶',
+            price:35,
+            calories:176 + '大卡',
+            ingredients: ['特級綠茶茶葉','甘蔗液糖','半月形冰塊'],
+            img:'02.png'
+            },
+
+            {
+            product_name:'仙草凍奶茶',
+            price:55,
+            calories:337 + '大卡',
+            ingredients: ['錫蘭紅茶茶葉','嚴選奶精','甘蔗液糖','仙草原汁','半月形冰塊'],
+            img:'03.png'
+            },
+
+            {product_name:'蘆薈蜂蜜檸檬',
+            price:45,
+            calories:250 + '大卡',
+            ingredients: ['蜂蜜蘆薈','龍眼花蜜（調合）','檸檬','半月形冰塊'],
+            img:'04.png'
+            },
+
+            {
+            product_name:'桔茶',
+            price:40,
+            calories:196+ '大卡',
+            ingredients: ['金桔原汁','甘蔗液糖','半月形冰塊'],
+            img:'05.png'
+            },
+
+            {
+            product_name:'優多綠茶 / 多多綠茶',
+            price:45,
+            calories:293 + '大卡',
+            ingredients: ['特級綠茶茶葉','甘蔗液糖','清心優多','半月形冰塊'],
+            img:'06.png'
+            },
+        ]
+
+        var product = document.querySelector('.all')//在all中加入以下forEach回圈內的內容
+
+        array.forEach(function(array){
+            product.innerHTML = product.innerHTML +
+                                     `<div class = 'product'>
+                                    <img width='100%' src="${array.img}" alt="">
+                                    <div class = 'content'>
+                                        <h2>品名:${array.product_name}</h2>
+                                        <div>價格: ${array.price}</div>
+                                        <div>成分: ${array.ingredients}</div>
+                                        <div>calories: ${array.calories}</div>
+                                    </div>
+                                </div>
+                                `//雖然迴圈會顯示每次的執行內容，但都會被下一次返回的內容覆蓋，所以要加入product.innerHTML，把每次的動作紀錄下來，最後一次的回傳值就會包含每筆資料
+                                //``裡的class可以讀取css樣式
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            margin:auto;
+            background-color:  rgb(214, 232, 247);
+        }
+
+        img {
+            width: 100%;
+           
+
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+           width: 90vw;
+           margin: auto;
+            
+        }
+
+        .card {
+            width: 25%;
+            
+            background-color: rgb(122, 188, 233);
+            border: 5px solid rgb(214, 232, 247);
+            padding: 10px;
+            
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+        <!-- <div class="card">
+            <img src="" alt="">
+            <h3></h3>
+            <div>天氣慨況</div>
+            <div>最高溫</div>
+            <div>最低溫</div>
+            <div>舒適度</div>
+            <div>降雨機率</div>
+
+        </div> -->
+    </div>
+    <script>
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-2CAF55D2-D2AC-499E-9641-D2E3C9567C07')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (weather) {
+                console.log(weather);
+
+                var cards = document.querySelector('.cards')
+                var locations = weather.records.location
+
+                locations.forEach(function (location, i) {
+                    var locationName = location.locationName
+                    var wx = location.weatherElement[0].time[0].parameter.parameterName //天氣慨況
+                    var maxt = location.weatherElement[4].time[0].parameter.parameterName //最高溫
+                    var mint = location.weatherElement[2].time[0].parameter.parameterName //最低溫
+                    var cl = location.weatherElement[3].time[0].parameter.parameterName //舒適度
+                    var pop = location.weatherElement[1].time[0].parameter.parameterName //降雨機率
+
+                    var parameterValue = location.weatherElement[0].time[0].parameter.parameterValue //降雨機率
+                    console.log(locationName, wx, maxt, mint, cl, pop)
+
+
+                    if (parameterValue < 15) {
+                        var weather_Value = "01.png"
+                    } else if (parameterValue >= 15) {
+                        var weather_Value = "02.png"
+
+                    }
+
+
+                    cards.innerHTML += `<div class="card">
+            <img src="${weather_Value}" alt="">
+            <h3>${locationName}</h3>
+            <div>天氣慨況: ${wx}</div>
+            <div>最高溫: ${maxt}</div>
+            <div>最低溫: ${mint}</div>
+            <div>舒適度: ${cl}</div>
+            <div>降雨機率: ${pop}</div>
+                        ${parameterValue}
+
+            </div>`
+
+                })
+
+            })
+
+    </script>
+</body>
+
+</html>

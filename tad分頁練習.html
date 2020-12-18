@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            /* 上下置中 */
+        }
+
+        .tab {
+            margin: auto;
+            width: 600px;
+            height: 300px;
+        }
+
+        .tab_btns {
+            display: flex;
+            height: 100px;
+            background-color: blanchedalmond;
+        }
+
+        .tab_content {
+            height: 200px;
+            width: 100%;
+            background-color: rgb(207, 162, 117);
+        }
+
+        .btn {
+            height: 100%;
+            width: 33.333%;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        .btn.active {
+
+            text-align: center;
+            background-color: rgb(85, 66, 38);
+            color: blanchedalmond
+        }
+
+        .text {
+            padding: 30px;
+            box-sizing: border-box;
+            /* 超出的部分自動刪除 */
+            display: none;
+            /* 不顯示 */
+        }
+
+        .text.active {
+            display: block;
+            /* 顯示區塊元素 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_btns">
+
+            <div class="btn active">按鈕1</div>
+            <div class="btn">按鈕2</div>
+            <div class="btn">按鈕3</div>
+        </div>
+
+        <div class="tab_content">
+            <div class="text active">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam odio aut
+                laboriosam ratione ut enim suscipit, dolorum atque perferendis quibusdam excepturi fugiat maxime quia,
+                nisi saepe consequuntur quo unde neque!</div>
+            <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et odio maxime iste! Quaerat
+                porro, expedita, ducimus numquam dolores atque veniam obcaecati ab aut iste culpa aspernatur odio nulla
+                dolor dicta.</div>
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ab dicta, tempore, unde earum aperiam
+                deserunt sapiente in voluptatibus perspiciatis illum, reprehenderit a cumque adipisci maiores quae odit!
+                Inventore, ipsa.
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        var btns = document.querySelectorAll('.btn');
+        var text = document.querySelectorAll('.text')
+
+        // 點擊按鈕時,先把所有的active移除,再給被點擊的按鈕加上active的class ,同時給"相對應索引值"的content也加上active的class
+
+        for (var i = 0; i < btns.length; i++) {
+            const index = i;
+            const b = btns[i] //用一個變數儲存陣列
+            const t= text[i]
+            b.onclick = function () { //因為陣列不能直接執行動作，所以用變數來代替
+                console.log(index);//檢查有沒有抓到資料
+                
+                if (b.classList.contains('active')) {
+
+
+                }
+                else {
+                    for (var i = 0; i < btns.length; i++) {
+                        const all_btn = btns[i]
+                        all_btn.classList.remove('active')//將所有btn的active刪掉
+                    }
+
+                    for (var i = 0; i < text.length; i++) {
+                        const all_btn = text[i]
+                        all_btn.classList.remove('active')//將所有text的active刪掉
+                    }
+                    b.classList.add('active')
+                    t.classList.add('active')
+
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

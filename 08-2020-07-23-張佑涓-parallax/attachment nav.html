@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }  /* 設定整個頁面不要有白邊 */
+        html{scroll-behavior:smooth;} /*滑動方式呈現動作 */
+
+      
+        *{box-sizing: border-box;}
+        /* 固定邊寬 */
+        #img1 {
+            background-image: url("bluedesign-pic100.jpg");
+        }
+
+        .img1 {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 讓背景圖片有視差的效果 */
+            background-repeat: no-repeat;
+        }
+
+        .Transparent-top{
+            width: 100%;
+            height:calc(100% - 100px);
+            background-color: rgba(231, 224, 213, 0.5);
+            position: relative;
+            
+        }
+        .Transparent {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(231, 224, 213, 0.5);
+            position: relative;
+            
+        }
+
+        .title1 {
+            width: 400px;
+            height: 70px;
+            background-color: rgb(70, 66, 62);
+            font-size: 35px;
+            letter-spacing: 10px;/*字跟字的間距*/
+             line-height: 70px; /*行高 */
+            font-family:stroke-dashoffset ;
+            text-align: center;/*文字對齊*/
+      
+            color: rgb(223, 215, 215);
+            position: absolute;
+            left: calc(50% - 200px);
+            top: calc(50% - 35px);
+            /*方框上下左右對齊，也可以寫成
+            transform:translate(-50%,-50%)
+            當不知道長寬可以使用*/
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 100;
+            letter-spacing: 10px;
+        }
+
+
+        .text1 {
+            padding: 50px 80px;
+            background-color: rgba(255, 255, 255, 0.5);
+            font-size: 20px;
+            font-family: cwTeXYen’, sans-serif;
+            line-height: 45px;
+
+            text-align: justify;
+
+
+        }
+
+        #title2 {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .img2 {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        #img2 {
+            background-image: url("02.jpg");
+
+
+        }
+
+        #text2 {
+            background-color: rgb(70, 66, 62);
+            color: white;
+        }
+
+        #img3 {
+            background-image: url("03.jpg");
+        }
+
+        #title3 {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        #text3 {
+            background-color: rgb(70, 66, 62);
+            color: white;
+        }
+        #nav{
+            height:100px;
+            background-color: rgba(5, 102, 102,0.5);
+            padding: 10px;
+        }
+        .block1{
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.5);
+            display:block;
+            text-align: center;
+            line-height: 70px;
+            text-decoration: none;
+            color: darkslategrey;
+            font-size: 20px;
+            font-weight: 900;
+            padding: 0 15px;
+            margin: 5px 7px;
+            float: left;
+            position: relative;
+
+            transition: 0.4s;
+        }
+        .block1:hover{
+            background-color: rgb(255, 255, 255);
+        }
+        #up{
+            width: 80px;
+            height: 80px;
+            background-color: rgba(92, 117, 92, 0.5);
+            border-radius: 50%;
+
+          position: fixed;  /*  設定在整個頁面 */
+            right: 20px;
+            bottom: 20px;
+            z-index:5 ; /* 前後層，數字越大層級越高 */
+           
+            transition: 0.4s;
+            /* 變化多快，與#up:hover連結 */
+
+            line-height: 80px;
+            text-align: center;
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            font-weight: 900;
+            
+        }
+        #up:hover{
+            background-color: rgb(69, 85, 83);
+            line-height: 85px;
+            width: 85px;
+            height: 85px;
+            }
+        /* 當#up滑鼠移入時會改變成這樣 */
+        
+        .bottom{
+            width: 0%;
+            height: 7px;
+            background-color: rgba(124, 156, 156, 0);
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            transition: 1s;
+        }
+        .block1:hover .bottom{
+            background-color: rgb(19, 53, 53);
+            width: 100%;
+        }
+        /* 當滑鼠碰到block1，bottom做變化 */
+            
+    </style>
+
+</head>
+
+<body>
+    <a href="#img1"><div id="up">TOP</div></a>
+
+    <div id="img1" class="img1">
+        <div id="nav">
+            <a class="block1" href="#title1">SCROLL DOWN
+                <div class="bottom"></div>
+            </a>
+            <a class="block1" href="#text1">PARALLAX DEMO
+                <div class="bottom"></div>
+            </a>
+            <a class="block1" href="#img2">LESS HEIGHT
+                <div class="bottom"></div>
+            </a>
+            <a class="block1" href="#text2">Scroll
+                <div class="bottom"></div>
+            </a>
+            <a class="block1" href="#img3">PARALLAX DEMO
+                <div class="bottom"></div>
+            </a>
+            <a class="block1" href="#text3">Scroll
+                <div class="bottom"></div>
+            </a>
+        </div>
+        <div class="Transparent-top">
+            <div id="title1" class="title1">SCROLL DOWN</div>
+        </div>
+    </div>
+
+    <div id="text1" class="text1">
+        <h2>PARALLAX DEMO</h2>
+        Parallax scrolling is a web site trend where the background content is moved at a different speed than the
+        foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed
+        posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit
+        dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam
+        pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum
+        at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate
+        at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis
+        ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor
+        placerat leo.
+    </div>
+
+
+    <div id="img2" class="img2">
+        <div class="Transparent">
+            <div id="title2" class="title1">LESS HEIGHT</div>
+        </div>
+    </div>
+
+    <div id="text2" class="text1">
+
+        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+
+    <div id="img3" class="img2">
+        <div class="Transparent">
+            <div id="title3" class="title1">SCROLL UP</div>
+        </div>
+    </div>
+
+    <div id="text3" class="text1">
+
+        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+    <div id="img1" class="img1">
+        <div class="Transparent">
+            <div id="title1" class="title1">COOL!</div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

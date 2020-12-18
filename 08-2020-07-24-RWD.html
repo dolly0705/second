@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        #nav {
+            width: 400px;
+            height: 100vh;
+            /* %由於底下沒有任何內容物，所以跟vh vw不同，即使設定了數值也不會顯示 
+            vh vw : 會隨著網頁縮放而改變尺寸*/
+            background-color: rgb(228, 177, 120);
+            float: left;
+            padding-top: 50px;
+        }
+
+        #content {
+            width: calc(100% - 400px);
+            height: 100vh;
+            background-color: rgba(245, 222, 201, 0.911);
+            float: left;
+            padding-top:calc(50vh - 250px) ;
+            /* 如果高度的單位是vh，計算時的單位也要一致 */
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(145, 73, 14); 
+            text-align: center;
+            font-size: 80px;
+            color: rgb(207, 170, 143);
+            line-height: 180px;
+
+            margin: 0 auto 50px auto;
+        }
+
+
+        
+        .btn-group {
+            width: 200px;
+            margin: auto;
+        }
+
+        .btn {
+            width: 200px;
+            height: 50px;
+            background-color: rgb(145, 73, 14);
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 50px;
+            color: rgb(255, 226, 188);
+            font-size: 24px;
+        }
+        .xyz{
+            height: 500px;
+            width: 80%;
+            background-color: rgb(236, 236, 236);
+            margin: auto;
+        }
+        .x{
+            width:calc(33.333% - 6.666px) ;
+            height: 100%;
+            background-color: chocolate;
+            font-size: 150px;
+            line-height: 500px;
+            text-align: center;
+            float: left;
+        }
+        .x:nth-child(2){
+            margin: 0 10px;
+        }
+        @media (max-width:1280px) {
+            .x{
+            width:calc(50% - 5px);
+            height:calc(50% - 5px);
+            line-height:calc(250px - 5px);
+            font-size: 120px;
+         
+        }
+        .x:nth-child(1){
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+        .x:nth-child(2){
+            margin: 0 10px 0 0;
+        }
+        
+        }
+        @media (max-width: 768px) {
+            #nav {
+                width: 100%;
+                height: 120px; /* ? */
+                padding-top: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+              
+            }
+
+            #content {
+                width: 100%;
+                height:calc(100vh - 120px);
+              
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+                margin: 0;
+                float: left;
+                font-size: 50px;
+                line-height: 90px;
+
+            }
+
+            .btn-group {
+                width:unset;/* ? */
+                padding: 25px 0;
+                margin: 0;
+                float: right;
+                /* background-color: turquoise; */
+            }
+
+            .btn {
+                float: left;
+                width: 100px;
+                height: 50px;
+                margin-bottom: 0;
+                margin-left: 10px;
+            }
+            .x{
+            width:calc(50% - 5px);
+            height:calc(50% - 5px);
+            line-height: 250px;
+         
+        }
+        
+        }
+
+        @media (max-width: 576px) {
+            .menu-toggle{
+                width: 100px;
+                height: 100px;
+                background-color: rgb(243, 168, 106);
+                float: left;
+            }
+            /* view height */
+            /* view width */
+            #nav {
+                position: relative;
+              padding-right: calc(50vw - 50px);  /* vw跟著螢幕的大小而改變 */
+            }
+
+            .btn-group{
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                padding: 0;
+                background-color: rgb(255, 255, 255);
+            }
+
+            .btn{
+                float: unset;
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .btn:nth-child(3){
+                margin-bottom: 0;
+            }
+            /* 有三個btn，指定第三個用.btn:nth-child(3) */
+            .logo {
+                width: 100px;
+                height: 100px;
+                margin: 0;
+                float: right;
+            }
+
+            .menu-toggle:hover~.btn-group{
+                display: block;
+            }
+            
+            #content {
+               padding: 0;
+              
+            }
+            .xyz{
+            height:100% ;
+            width: 100%;
+            }
+            .x{
+                width:100px ;
+                height: calc(33.333vh - 46.666px);
+                /* 不要忘記減nav的高 */
+                font-size: 100px;
+                line-height:calc(33.333vh - 46.666px);
+                text-align: center;
+                float: left;
+            }
+       
+            .x:nth-child(1){
+                margin: 0;
+            }
+            .x:nth-child(2){
+                margin: 0 ;
+                width: 100%;
+                margin: 10px 0;
+            }
+            .x:nth-child(3){
+                margin: 0 ;
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <div class="logo">logo</div>
+        <div class="menu-toggle"></div>
+        <div class="btn-group">
+            <div class="btn">按鈕1</div>
+            <div class="btn">按鈕2</div>
+            <div class="btn">按鈕3</div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div id="content">
+        <div class="xyz">
+            <div class="x">x</div>
+            <div class="x">y</div>
+            <div class="x">z</div>
+            
+        </div>
+    <div class="clearfix"></div>
+
+    </div>
+    <div class="clearfix"></div>
+</body>
+
+</html>
